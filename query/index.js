@@ -6,11 +6,9 @@ app.use(express.json());
 app.use(cors());
 
 const posts = {};
-
 app.get("/posts", (req, res) => {
   res.send(posts);
 });
-
 const handleEvent = (type, data) => {
   if (type === "PostCreated") {
     const { id, title } = data;

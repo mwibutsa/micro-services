@@ -1,19 +1,13 @@
 import { Router, Request, Response } from "express";
-import { body } from "express-validator";
+import { currentUser } from "../middleware/current-user";
 
 const router = Router();
 
 router.get(
   "/api/users/currentuser",
-  [
-    body("email").isEmail().withMessage("Email must be valid"),
-    body("password")
-      .trim()
-      .isLength({ min: 4, max: 20 })
-      .withMessage("Password must be between 4 and 20 characters"),
-  ],
+  currentUser,
   (req: Request, res: Response) => {
-    const { email, password } = req.body;
+    return res.status(200).send({ currentUser: req.currentUser || null });
   }
 );
 

@@ -1,0 +1,5 @@
+{
+  "yaml.schemas": {
+    "https://json.schemastore.org/pre-commit-config.json": "file:///Users/mwibutsafloribert/Desktop/Learning/MicroServices/micro-services/ticketing/infra/k8s/auth-depl.yml"
+  }
+}
